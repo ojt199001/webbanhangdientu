@@ -29,7 +29,7 @@
                                     <!-- Shopping cart table -->
                                     <div class="table-responsive">
                                     <ol class="breadcrumb">
-                                    <h1>Giỏ hàng</h1><br>
+                                    <h3>Giỏ hàng</h3><br>
                                     </ol>
                                         <table class="table">
                                             <thead>

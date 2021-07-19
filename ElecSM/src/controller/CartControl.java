@@ -28,9 +28,9 @@ public class CartControl extends HttpServlet {
         if (txt.isEmpty()) {
             txt = id;
         } else {
-            txt = txt + "," + id;
+            txt = txt + "#" + id;
         }
-        Cookie c = new Cookie("id", txt);
+        Cookie c = new Cookie("id",txt);
         c.setMaxAge(60 * 60 * 24);
         response.addCookie(c);
         response.sendRedirect("print");

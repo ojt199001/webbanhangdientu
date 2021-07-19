@@ -38,7 +38,7 @@ public class RemoveProductControl extends HttpServlet {
                 response.addCookie(o);
             }
         }
-        String ids[] = txt.split(",");
+        String ids[] = txt.split("#");
         String txtOutPut = "";
         int check = 0;
         for (int i = 0; i < ids.length; i++) {
@@ -46,7 +46,7 @@ public class RemoveProductControl extends HttpServlet {
                 if (txtOutPut.isEmpty()) {
                     txtOutPut = ids[i];
                 } else {
-                    txtOutPut = txtOutPut + "," + ids[i];
+                    txtOutPut = txtOutPut + "#" + ids[i];
                 }
             }
         }

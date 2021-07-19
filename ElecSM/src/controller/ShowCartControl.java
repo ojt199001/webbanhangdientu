@@ -34,7 +34,7 @@ public class ShowCartControl extends HttpServlet {
         DAO dao = new DAO();
         for (Cookie o : arr) {
             if (o.getName().equals("id")) {
-                String txt[] = o.getValue().split(",");
+                String txt[] = o.getValue().split("#");
                 for (String s : txt) {
                     list.add(dao.getProduct(s));
                 }

@@ -15,6 +15,12 @@
     </head>
     <body>
         <jsp:include page="Menu.jsp"></jsp:include>
+        <section class="jumbotron text-center">
+   
+        <h1 class="jumbotron-heading"><img alt="" src="image/banner3.jpg" height="400px" width="1267px"></h1>
+        <p class="lead text-yellow mb-0"><b ><i>----->Uy tín tạo nên thương hiệu<-----</i></b></p>
+        
+		</section>
             <div class="container">
                 <div class="row">
                     <div class="col">
