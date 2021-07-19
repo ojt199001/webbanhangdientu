@@ -49,7 +49,7 @@
                     </li>
                 </c:if>
             </ul>
-            <a class="btn btn-success btn-sm ml-3" href="show">
+            <a class="btn btn-success btn-sm ml-3" href="print">
                     <i class="fa fa-shopping-cart"></i>&nbsp; &nbsp;Giỏ hàng
             </a>
         </div>
