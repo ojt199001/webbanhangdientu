@@ -9,10 +9,6 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-/**
- *
- * @author trinh
- */
 @WebServlet(name = "RemoveProductControl", urlPatterns = {"/remove"})
 public class RemoveProductControl extends HttpServlet {
 

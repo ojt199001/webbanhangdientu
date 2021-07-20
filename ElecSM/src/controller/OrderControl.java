@@ -18,10 +18,6 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-/**
- *
- * @author trinh
- */
 @WebServlet(name = "OrderControl", urlPatterns = {"/order"})
 public class OrderControl extends HttpServlet {
 
@@ -54,7 +50,7 @@ public class OrderControl extends HttpServlet {
             o.setMaxAge(0);
             response.addCookie(o);
         }
-        response.sendRedirect("Home.jsp");
+        response.sendRedirect(request.getContextPath() + "/home");
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">

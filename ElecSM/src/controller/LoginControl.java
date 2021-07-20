@@ -84,7 +84,7 @@ public class LoginControl extends HttpServlet {
             session.setAttribute("acc", a);
             session.setMaxInactiveInterval(1000);
             // Redirect (Chuyá»ƒn hÆ°á»›ng) sang trang /userInfo.
-            response.sendRedirect(request.getContextPath() + "/home");
+            response.sendRedirect(request.getContextPath() + "/index.jsp");
           // response.sendRedirect(request.getContextPath() + "/home1");
         }
     }

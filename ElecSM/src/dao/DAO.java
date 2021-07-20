@@ -45,7 +45,10 @@ public class DAO {
     }
     public List<Product> getTop3() {
         List<Product> list = new ArrayList<>();
-        String query = "select top 3 * from product";
+        String query = "SELECT *\r\n"
+        		+ "FROM project.product\r\n"
+        		+ "ORDER BY id DESC\r\n"
+        		+ "LIMIT 0,3";
         try {
             conn = new DBContext().getMySQLConnection();//mo ket noi voi sql
             ps = conn.prepareStatement(query);
@@ -77,7 +80,8 @@ public class DAO {
                         rs.getString(3),
                         rs.getDouble(4),
                         rs.getString(5),
-                        rs.getString(6));
+                        rs.getString(6),
+                1);
             }
         } catch (Exception e) {
         }
