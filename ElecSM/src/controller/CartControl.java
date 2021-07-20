@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package controller;
 
 import java.io.IOException;
@@ -14,10 +9,6 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-/**
- *
- * @author trinh
- */
 @WebServlet(name = "CartControl", urlPatterns = {"/cart"})
 public class CartControl extends HttpServlet {
 
@@ -37,9 +28,9 @@ public class CartControl extends HttpServlet {
         if (txt.isEmpty()) {
             txt = id;
         } else {
-            txt = txt + "," + id;
+            txt = txt + "#" + id;
         }
-        Cookie c = new Cookie("id", txt);
+        Cookie c = new Cookie("id",txt);
         c.setMaxAge(60 * 60 * 24);
         response.addCookie(c);
         response.sendRedirect("print");

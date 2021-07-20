@@ -45,7 +45,10 @@ public class DAO {
     }
     public List<Product> getTop3() {
         List<Product> list = new ArrayList<>();
-        String query = "select top 3 * from product";
+        String query = "SELECT *\r\n"
+        		+ "FROM project.product\r\n"
+        		+ "ORDER BY id DESC\r\n"
+        		+ "LIMIT 0,3";
         try {
             conn = new DBContext().getMySQLConnection();//mo ket noi voi sql
             ps = conn.prepareStatement(query);
@@ -61,6 +64,28 @@ public class DAO {
         } catch (Exception e) {
         }
         return list;
+    }
+    
+    public Product getProduct(String txt) {
+        String query = "select * from project.product where id = ?";
+        List<Product> list = new ArrayList<>();
+        try {
+            conn = new DBContext().getMySQLConnection();
+            ps = conn.prepareStatement(query);
+            ps.setString(1, txt);
+            rs = ps.executeQuery();
+            while (rs.next()) {
+                return new Product(rs.getInt(1),
+                        rs.getString(2),
+                        rs.getString(3),
+                        rs.getDouble(4),
+                        rs.getString(5),
+                        rs.getString(6),
+                1);
+            }
+        } catch (Exception e) {
+        }
+        return null;
     }
 
     public List<Product> getNext3Product(int amount) {
@@ -317,6 +342,7 @@ public class DAO {
         DAO dao = new DAO();
         List<Product> list = dao.getAllProduct();
         List<Category> listC = dao.getAllCategory();
+ 
 
         for (Category o : listC) {
             System.out.println(o);

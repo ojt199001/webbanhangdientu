@@ -12,55 +12,87 @@
         <!------ Include the above in your HEAD tag ---------->
         <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
         <link href="css/style.css" rel="stylesheet" type="text/css"/>
+        <style type="text/css">
+        
+        .row a {
+        text-decoration: none;
+        }
+        </style>
     </head>
     <body>
         <jsp:include page="Menu.jsp"></jsp:include>
-            <div class="container">
+
                 <div class="row">
                     <div class="col">
                         <nav aria-label="breadcrumb">
                             <ol class="breadcrumb">
                                 <li class="breadcrumb-item"><a href="Home.jsp">Home</a></li>
-                                <li class="breadcrumb-item"><a href="#">Category</a></li>
-                                <li class="breadcrumb-item active" aria-current="#">Sub-category</li>
+                                <li class="breadcrumb-item"><a href="#">Cửa hàng</a></li>
+                                
                             </ol>
                         </nav>
                     </div>
                 </div>
-            </div>
-            <div class="container">
+
+ 
                 <div class="row">
                 <jsp:include page="Left.jsp"></jsp:include>
 
                     <div class="col-sm-9">
                         <div id="content" class="row">
                         <c:forEach items="${listP}" var="o">
-                            <div class="product col-12 col-md-6 col-lg-4">
-                                <div class="card">
-                                    <img class="card-img-top" src="<%=request.getContextPath()%>/image/${o.image}" alt="Card image cap" width="350px", height="250px">
+                            <div class="product col-12 col-md-6 col-lg-3">
+                                <div class="card" style="margin-right: 20px;">
+                                    <img class="card-img-top" src="<%=request.getContextPath()%>/image/${o.image}" alt="Card image cap" width="100px", height="250px">
                                     <div class="card-body">
-                                        <h4 class="card-title show_txt"><a href="detail?pid=${o.id}" title="View Product">${o.name}</a></h4>
+                                        <h4 class="card-title show_txt"><a href="detail?pid=${o.id}" title="View Product" style="text-decoration: none">${o.name}</a></h4>
                                         <p class="card-text show_txt">${o.title}</p>
+                                        
+                                        <b><p>${o.price} đ</p></b>
                                         <div class="row">
                                             <div class="col">
-                                                <p class="btn btn-danger btn-block">${o.price} $</p>
-                                            </div>
-                                            <div class="col">
-                                           
-                                                <a href="cart?id=${o.id}" class="btn btn-success btn-block">Add to cart</a>
+                                                <a href="cart?id=${o.id}"><button class="btn btn-success btn-block" data-toggle="modal" data-target="#myModal">Thêm vào giỏ hàng</button></a>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
+                                <br>
+                                <br>
                             </div>
                         </c:forEach>
             			</div>
             		</div>
             	</div>
-            </div>
+			<br>
+	        <a href="#" style="margin-left: 1375px;">
+	        <button class="btn btn-dark">Lên đầu trang</button>
+	        </a>
 
+
+			<hr>
         <jsp:include page="Footer.jsp"></jsp:include>
-       
+          <div class="modal" id="myModal">
+         <div class="modal-dialog">
+            <div class="modal-content">
+               <!-- Modal Header -->
+               <div class="modal-header">
+                  <h4 class="modal-title">Thông báo</h4>
+                  <button type="button" class="close" data-dismiss="modal">&times;</button>
+               </div>
+               <!-- Modal body -->
+               <div class="modal-body">
+                  Thêm vào giỏ hàng thành công
+               </div>
+               <!-- Modal footer -->
+               <div class="modal-footer">
+                  <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+               </div>
+            </div>
+         </div>
+      </div>
+      <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
     </body>
 </html>
 
