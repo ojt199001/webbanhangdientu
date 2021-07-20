@@ -42,8 +42,9 @@
                             <h2>Quản lý sản phẩm</h2>
                         </div>
                         <div class="col-sm-6">
-                            <a href="#addEmployeeModal"  class="btn btn-success" data-toggle="modal"><i class="material-icons">&#xE147;</i> <span>Add New Product</span></a>
-                            <a href="#deleteEmployeeModal" class="btn btn-danger" data-toggle="modal"><i class="material-icons">&#xE15C;</i> <span>Delete</span></a>						
+                        	<a href="#deleteEmployeeModal" class="btn btn-danger" data-toggle="modal"><i class="material-icons">&#xE15C;</i> <span>Xóa</span></a>	
+                            <a href="#addEmployeeModal"  class="btn btn-success" data-toggle="modal"><i class="material-icons">&#xE147;</i> <span>Thêm sản phẩm</span></a>
+                            					
                         </div>
                     </div>
                 </div>
@@ -98,7 +99,7 @@
                     </ul>
                 </div>
             </div>
-            <a href="/ElecSM/home"><button type="button" class="btn btn-primary">Back to home</button>
+            <a href="/ElecSM/home"><button type="button" class="btn btn-primary">Quay lại cửa hàng</button>
             </a>
             <hr>
 
@@ -109,7 +110,7 @@
                 <div class="modal-content">
                     <form action="add" method="post">
                         <div class="modal-header">						
-                            <h4 class="modal-title">Add Product</h4>
+                            <h4 class="modal-title">Thêm sản phẩm</h4>
                             <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
                         </div>
                         <div class="modal-body">					
