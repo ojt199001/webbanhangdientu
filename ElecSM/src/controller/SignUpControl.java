@@ -33,6 +33,8 @@ public class SignUpControl extends HttpServlet {
         }else{
             DAO dao = new DAO();
             Account a = dao.checkAccountExist(user);
+            
+            
             if(a == null){
                 //dc signup
                 dao.singup(user, pass);

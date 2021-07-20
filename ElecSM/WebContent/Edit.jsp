@@ -1,3 +1,4 @@
+
 <%-- 
     Document   : ManagerProduct
     Created on : Dec 28, 2020, 5:19:02 PM
@@ -25,6 +26,8 @@
                 width: 200px;
                 height: 120px;
             }
+            
+            
         </style>
     <body>
         <div class="container">
