@@ -78,6 +78,9 @@ public class AddControl extends HttpServlet {
     }
 
     /**
+     * 
+     * 
+     * 
      * Returns a short description of the servlet.
      *
      * @return a String containing servlet description
@@ -86,5 +89,7 @@ public class AddControl extends HttpServlet {
     public String getServletInfo() {
         return "Short description";
     }// </editor-fold>
+
+	Dell XPS 9360 i7 
 
 }

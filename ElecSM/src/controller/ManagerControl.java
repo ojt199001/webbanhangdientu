@@ -33,6 +33,9 @@ public class ManagerControl extends HttpServlet {
         Account a = (Account) session.getAttribute("acc");
         int id = a.getId();
         DAO dao = new DAO();
+        
+        
+        
         List<Product> list = dao.getProductBySellID(id);
         List<Category> listC = dao.getAllCategory();
 
