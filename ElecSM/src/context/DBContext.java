@@ -37,7 +37,7 @@ catch (ClassNotFoundException | SQLException ex) {
  return conn;
 }
 
-
+//////
 // kiểm tra kết nối csdl
 public static void main(String args[]) 
 { System.out.println(getMySQLConnection());
