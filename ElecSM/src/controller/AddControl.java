@@ -90,6 +90,5 @@ public class AddControl extends HttpServlet {
         return "Short description";
     }// </editor-fold>
 
-	Dell XPS 9360 i7 
 
 }

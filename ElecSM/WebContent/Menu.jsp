@@ -15,6 +15,9 @@
                    <li class="nav-item">
                         <a class="nav-link" href="home">Cửa hàng</a>
                     </li>
+                     <li class="nav-item">
+                        <a class="nav-link" href="Blog.jsp">Blog</a>
+                    </li>
                 <c:if test="${sessionScope.acc.isAdmin == 1}">
                     <li class="nav-item">
                         <a class="nav-link" href="#">Quản lý tài khoản</a>
