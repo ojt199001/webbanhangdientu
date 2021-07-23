@@ -25,6 +25,13 @@
                 width: 200px;
                 height: 120px;
             }
+            .anh1 {
+              display: flex;
+			  justify-content: center;
+			  flex-direction: column;
+			  align-items: center;
+			  font-family: 'Roboto Mono', monospace;
+            }
         </style>
     <body>
         <div class="container">
@@ -35,8 +42,9 @@
                             <h2>Quản lý sản phẩm</h2>
                         </div>
                         <div class="col-sm-6">
-                            <a href="#addEmployeeModal"  class="btn btn-success" data-toggle="modal"><i class="material-icons">&#xE147;</i> <span>Add New Product</span></a>
-                            <a href="#deleteEmployeeModal" class="btn btn-danger" data-toggle="modal"><i class="material-icons">&#xE15C;</i> <span>Delete</span></a>						
+                        	<a href="#deleteEmployeeModal" class="btn btn-danger" data-toggle="modal"><i class="material-icons">&#xE15C;</i> <span>Xóa</span></a>	
+                            <a href="#addEmployeeModal"  class="btn btn-success" data-toggle="modal"><i class="material-icons">&#xE147;</i> <span>Thêm sản phẩm</span></a>
+                            					
                         </div>
                     </div>
                 </div>
@@ -80,7 +88,6 @@
                     </tbody>
                 </table>
                 <div class="clearfix">
-                    <div class="hint-text">Tổng  <b>  15  </b> loại sản phẩm</div>
                     <ul class="pagination">
                         <li class="page-item disabled"><a href="#">Previous</a></li>
                         <li class="page-item active"><a href="#" class="page-link">1</a></li>
@@ -92,8 +99,9 @@
                     </ul>
                 </div>
             </div>
-            <a href="/ElecSM/home"><button type="button" class="btn btn-primary">Back to home</button>
+            <a href="/ElecSM/home"><button type="button" class="btn btn-primary">Quay lại cửa hàng</button>
             </a>
+            <hr>
 
         </div>
         <!-- Edit Modal HTML -->
@@ -102,32 +110,35 @@
                 <div class="modal-content">
                     <form action="add" method="post">
                         <div class="modal-header">						
-                            <h4 class="modal-title">Add Product</h4>
+                            <h4 class="modal-title">Thêm sản phẩm</h4>
                             <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
                         </div>
                         <div class="modal-body">					
                             <div class="form-group">
-                                <label>Name</label>
+                                <label>Tên sản phẩm</label>
                                 <input name="name" type="text" class="form-control" required>
                             </div>
                             <div class="form-group">
-                                <label>Image</label>
-                                <input name="image" type="text" class="form-control" required>
+                                <label>Hình ảnh</label>
+                                <div class = "anh1">
+								  <input name="image" type="file" class="form-control" id="file-uploader">
+								  <p id="feedback"></p>
+							  </div>
                             </div>
                             <div class="form-group">
-                                <label>Price</label>
+                                <label>Giá</label>
                                 <input name="price" type="text" class="form-control" required>
                             </div>
                             <div class="form-group">
-                                <label>Title</label>
+                                <label>Tiêu đề</label>
                                 <textarea name="title" class="form-control" required></textarea>
                             </div>
                             <div class="form-group">
-                                <label>Description</label>
+                                <label>Chi tiết</label>
                                 <textarea name="description" class="form-control" required></textarea>
                             </div>
                             <div class="form-group">
-                                <label>Category</label>
+                                <label>Danh mục</label>&nbsp;
                                 <select name="category" class="form-select" aria-label="Default select example">
                                     <c:forEach items="${listCC}" var="o">
                                         <option value="${o.cid}">${o.cname}</option>
@@ -146,6 +157,17 @@
         </div>
         
         
-    <script src="js/manager.js" type="text/javascript"></script>
+    <script src="js/manager.js" type="text/javascript">
+	    const fileUploader = document.getElementById('file-uploader');
+	
+	    fileUploader.addEventListener('change', (event) => {
+	      const files = event.target.files;
+	      console.log('files', files);
+	      
+	      const feedback = document.getElementById('feedback');
+	      const msg = `File ${files[0].name} uploaded successfully!`;
+	      feedback.innerHTML = msg;
+	    });
+    </script>
 </body>
 </html>

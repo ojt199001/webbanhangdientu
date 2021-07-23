@@ -1,9 +1,9 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!--begin of menu-->
-<nav class="navbar navbar-expand-md navbar-dark bg-danger">
+<nav class="navbar navbar-expand-md navbar-dark bg-dark">
     <div class="container">
-        <a class="navbar-brand" href="home"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-house-door-fill" viewBox="0 0 16 16">
+        <a class="navbar-brand" href="index.jsp"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-house-door-fill" viewBox="0 0 16 16">
   <path d="M6.5 14.5v-3.505c0-.245.25-.495.5-.495h2c.25 0 .5.25.5.5v3.5a.5.5 0 0 0 .5.5h4a.5.5 0 0 0 .5-.5v-7a.5.5 0 0 0-.146-.354L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293L8.354 1.146a.5.5 0 0 0-.708 0l-6 6A.5.5 0 0 0 1.5 7.5v7a.5.5 0 0 0 .5.5h4a.5.5 0 0 0 .5-.5z"/>
 </svg>&nbsp;&nbsp;ElecSM</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
@@ -12,6 +12,9 @@
 
         <div class="collapse navbar-collapse justify-content-end" id="navbarsExampleDefault">
             <ul class="navbar-nav m-auto">
+                   <li class="nav-item">
+                        <a class="nav-link" href="home">Cửa hàng</a>
+                    </li>
                 <c:if test="${sessionScope.acc.isAdmin == 1}">
                     <li class="nav-item">
                         <a class="nav-link" href="#">Quản lý tài khoản</a>
@@ -49,16 +52,11 @@
                     </li>
                 </c:if>
             </ul>
-            <a class="btn btn-success btn-sm ml-3" href="show">
+            <a class="btn btn-success btn-sm ml-3" href="print">
                     <i class="fa fa-shopping-cart"></i>&nbsp; &nbsp;Giỏ hàng
             </a>
         </div>
     </div>
 </nav>
-<section class="jumbotron text-center">
-   
-        <h1 class="jumbotron-heading"><img alt="" src="image/banner3.jpg" height="400px" width="1267px"></h1>
-        <p class="lead text-yellow mb-0"><b ><i>----->Uy tín tạo nên thương hiệu<-----</i></b></p>
-        
-</section>
+
 <!--end of menu-->

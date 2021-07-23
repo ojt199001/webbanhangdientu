@@ -17,10 +17,6 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-/**
- *
- * @author trinh
- */
 @WebServlet(name = "SearchControl", urlPatterns = {"/search"})
 public class SearchControl extends HttpServlet {
 

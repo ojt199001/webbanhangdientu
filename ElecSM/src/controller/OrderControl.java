@@ -18,19 +18,18 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-@WebServlet(name = "ShowCartControl", urlPatterns = {"/print"})
-public class ShowCartControl extends HttpServlet {
+@WebServlet(name = "OrderControl", urlPatterns = {"/order"})
+public class OrderControl extends HttpServlet {
 
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         Cookie arr[] = request.getCookies();
-        PrintWriter out = response.getWriter();
         List<Product> list = new ArrayList<>();
         DAO dao = new DAO();
         for (Cookie o : arr) {
             if (o.getName().equals("id")) {
-                String txt[] = o.getValue().split("#");
+                String txt[] = o.getValue().split(",");
                 for (String s : txt) {
                     list.add(dao.getProduct(s));
                 }
@@ -47,15 +46,11 @@ public class ShowCartControl extends HttpServlet {
                 }
             }
         }
-        double total = 0;
-        for (Product o : list) {
-            total = total + o.getAmount() * o.getPrice();
+        for (Cookie o : arr) {
+            o.setMaxAge(0);
+            response.addCookie(o);
         }
-        request.setAttribute("list", list);
-        request.setAttribute("total", total);
-        request.setAttribute("vat", 0.1 * total);
-        request.setAttribute("sum", 1.1 * total);
-        request.getRequestDispatcher("Cart.jsp").forward(request, response);
+        response.sendRedirect(request.getContextPath() + "/home");
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
