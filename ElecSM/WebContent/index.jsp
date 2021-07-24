@@ -117,45 +117,13 @@
         <div class = "card">
         		  <br>
                   <h3>Sản phẩm bán chạy</h3>
-        <div class = "row">
-        
-        <div class= "col-md-2">
-
-  
-        	<img src="image/2.jpg">
-
+                  <c:forEach items="${listNew}" var="o">
+                  <div class = "row">
+        	<div class= "col-md-2">
+			<img src="/image/${o.image}">
         	</div>
-			<div class= "col-md-2">
-
-            
-        	<img src="image/4.jpg">
-
-        	</div>
-			<div class= "col-md-2">
-
-            
-        	<img src="image/6.jpg">
-
-        	</div>
-
-			<div class= "col-md-2">
-
-            
-        	<img src="image/8.jpg">
-
-        	</div>
-			<div class= "col-md-2">
-
-            
-        	<img src="image/10.jpg">
-
-        	</div>
- 			<div class= "col-md-2">
-
-            
-        	<img src="image/12.jpg">
-        	</div>
-		</div>
+				  </div>
+			</c:forEach>
 		    <a href="#">
         	Xem thêm
         	</a>
