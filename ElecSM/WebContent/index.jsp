@@ -14,6 +14,8 @@
         <style type="text/css">
         .row img{
        		margin-left: 48px;
+       		/* padding-right: 48px; */
+       		
         }
         .row h3{
         	margin-top: 20px;

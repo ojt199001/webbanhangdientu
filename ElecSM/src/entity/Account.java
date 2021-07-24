@@ -5,12 +5,12 @@ public class Account {
     private String user;
     private String pass;
     private int isSell;
-    private int isAdmin;
+    private String isAdmin;
 
     public Account() {
     }
 
-    public Account(int id, String user, String pass, int isSell, int isAdmin) {
+    public Account(int id, String user, String pass, int isSell, String isAdmin) {
         this.id = id;
         this.user = user;
         this.pass = pass;
@@ -52,12 +52,12 @@ public class Account {
         this.isSell = isSell;
     }
 
-    public int getIsAdmin() {
+    public String getIsAdmin() {
         return isAdmin;
     }
 
-    public void setIsAdmin(int isAdmin) {
-        this.isAdmin = isAdmin;
+    public void setIsAdmin(String admin) {
+        this.isAdmin = admin;
     }
 
     @Override
