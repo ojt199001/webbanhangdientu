@@ -14,6 +14,8 @@
         <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
         <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
         <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <!------ Include the above in your HEAD tag ---------->
+        <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
         <link href="css/style.css" rel="stylesheet" type="text/css"/>
         <style>
             .gallery-wrap .img-big-wrap img {
@@ -51,6 +53,18 @@
     </head>
     <body>
         <jsp:include page="Menu.jsp"></jsp:include>
+                        <div class="row">
+                    <div class="col">
+                        <nav aria-label="breadcrumb">
+                            <ol class="breadcrumb">
+                                <li class="breadcrumb-item"><a href="Home.jsp">Home</a></li>
+                                <li class="breadcrumb-item"><a href="#">Chi tiết</a></li>
+                                
+                            </ol>
+                        </nav>
+                    </div>
+                </div>
+        <br>
             <div class="container">
                 <div class="row">
                 <jsp:include page="Left.jsp"></jsp:include>
@@ -73,7 +87,7 @@
 
                                         <p class="price-detail-wrap"> 
                                             <span class="price h3 text-warning"> 
-                                                <span class="num">${detail.price}</span><span class="currency"> $ 		(USD)</span>
+                                                <span class="num">${detail.price}</span><span class="currency">k đ 		(VND)</span>
                                             </span> 
                                         </p> <!-- price-detail-wrap .// -->
                                         <dl class="item-property">
@@ -87,21 +101,20 @@
                                         <div class="row">
                                             <div class="col-sm-5">
                                                 <dl class="param param-inline">
-                                                    <dt>Số lượng</dt>
-                                                    <dd>
-                                                        <select class="form-control form-control-sm" style="width:70px;">
-                                                            <option> 1 </option>
-                                                            <option> 2 </option>
-                                                            <option> 3 </option>
-                                                        </select>
-                                                    </dd>
+                  
                                                 </dl>  <!-- item-property .// -->
                                             </div> <!-- col.// -->
 
                                         </div> <!-- row.// -->
                                         <hr>
+                                        <div class = "row">
+                                        <div class="col-md-6">
                                         <a href="#" class="btn btn-lg btn-primary text-uppercase"> Buy now </a>
-                                        <a href="#" class="btn btn-lg btn-outline-primary text-uppercase"> <i class="fas fa-shopping-cart"></i> Add to cart </a>
+                                        </div>
+                                        <div class="col-md-6">
+                                        <a href="#" class="btn btn-lg btn-outline-primary text-uppercase"> <i class="fa fa-shopping-cart"></i> Add to cart </a>
+                                        </div>
+                                        </div>
                                     </article> <!-- card-body.// -->
                                 </aside> <!-- col.// -->
                             </div> <!-- row.// -->

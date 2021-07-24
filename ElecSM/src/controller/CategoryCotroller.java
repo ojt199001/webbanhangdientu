@@ -30,12 +30,14 @@ public class CategoryCotroller extends HttpServlet {
         String cateID = request.getParameter("cid");
         DAO dao = new DAO();
         List<Product> list = dao.getProductByCID(cateID);
+        List<Product> listN = dao.getTop6();
         List<Category> listC = dao.getAllCategory();
         Product last = dao.getLast();
         
         
         
         request.setAttribute("listP", list);
+        request.setAttribute("listNew", listN);
         request.setAttribute("listCC", listC);
         request.setAttribute("p", last);
         request.setAttribute("tag", cateID);
