@@ -15,13 +15,16 @@
                         </div>
                     </li>
                     <li>
+                        <a href="index_admin.jsp" class="active"><i class="fa fa-dashboard fa-fw"></i> Dashboard</a>
+                    </li>
+                    <li>
                         <a href="#"><i class="fa fa-user fa-fw"></i> Quản lý tài khoản<span class="fa arrow"></span></a>
                         <ul class="nav nav-second-level">
                             <li>
-                                <a href="admin.jsp"> Admin</a>
+                                <a href="admin.jsp"> <i class="fa fa-viadeo fa-fw"></i> Admin</a>
                             </li>
                             <li>
-                                <a href="user.jsp"> User</span></a>
+                                <a href="user.jsp"> <i class="fa fa-viadeo fa-fw"></i> User</span></a>
                             </li>
                         </ul>
                     </li>
@@ -29,7 +32,7 @@
                         <a href="#"><i class="fa fa-sitemap fa-fw"></i> Quản lý danh mục<span class="fa arrow"></span></a>
                         <ul class="nav nav-second-level">
                             <li>
-                                <a href="category.jsp">Danh mục</a>
+                                <a href="category.jsp"><i class="fa fa-viadeo fa-fw"></i> Danh mục</a>
                             </li>
                         </ul>
                     </li>
@@ -37,7 +40,7 @@
                         <a href="#"><i class="fa fa-bars fa-fw"></i> Quản lý sản phẩm<span class="fa arrow"></span></a>
                         <ul class="nav nav-second-level">
                             <li>
-                                <a href="product.jsp">Sản phẩm</a>
+                                <a href="product.jsp"><i class="fa fa-viadeo fa-fw"></i> Sản phẩm</a>
                             </li>
                         </ul>
                     </li>
@@ -45,27 +48,27 @@
                         <a href="#"><i class="fa fa-bar-chart fa-fw"></i> Quản lý doanh thu<span class="fa arrow"></span></a>
                         <ul class="nav nav-second-level">
                             <li>
-                                <a href="month.jsp">Doanh thu theo tháng</a>
+                                <a href="month.jsp"><i class="fa fa-viadeo fa-fw"></i> Doanh thu theo tháng</a>
                             </li>
                             <li>
-                                <a href="#">Doanh thu theo quý <span class="fa arrow"></span></a>
+                                <a href="#"><i class="fa fa-viadeo fa-fw"></i> Doanh thu theo quý <span class="fa arrow"></span></a>
                                     <ul class="nav nav-third-level">
                                         <li>
-                                            <a href="preciousI.jsp">Quý I</a>
+                                            <a href="preciousI.jsp"><i class="fa fa-pied-piper fa-fw"></i> Quý I</a>
                                         </li>
                                         <li>
-                                            <a href="preciousII.jsp">Quý II</a>
+                                            <a href="preciousII.jsp"><i class="fa fa-pied-piper fa-fw"></i> Quý II</a>
                                         </li>
                                         <li>
-                                            <a href="preciousIII.jsp">Quý III</a>
+                                            <a href="preciousIII.jsp"><i class="fa fa-pied-piper fa-fw"></i> Quý III</a>
                                         </li>
                                         <li>
-                                            <a href="preciousIV.jsp">Quý IV</a>
+                                            <a href="preciousIV.jsp"><i class="fa fa-pied-piper fa-fw"></i> Quý IV</a>
                                         </li>
                                     </ul>
                             </li>
                             <li>
-                                <a href="year.jsp">Doanh thu theo năm</a>
+                                <a href="year.jsp"><i class="fa fa-viadeo fa-fw"></i> Doanh thu theo năm</a>
                             </li>
                         </ul>
                     </li>

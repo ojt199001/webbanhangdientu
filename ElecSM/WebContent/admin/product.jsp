@@ -60,15 +60,7 @@
 
     <!-- Page Content -->
     <div id="page-wrapper">
-        <div class="container-fluid">
-
-            <div class="row">
-                <div class="col-lg-12">
-                    <h1 class="page-header">Sản phẩm</h1>
-                </div>
-            </div>
-
-            <div class="container-fluid">
+    	<div class="container-fluid">
             <div class="table-wrapper">
                 <div class="table-title">
                     <div class="row">
@@ -76,8 +68,8 @@
                             <h2>Quản lý sản phẩm</h2>
                         </div>
                         <div class="col-sm-6">
-                        	<a href="#addEmployeeModal"  class="btn btn-success" data-toggle="modal"><i class="material-icons">&#xE147;</i> <span>Thêm sản phẩm</span></a>
-							<a href="#deleteEmployeeModal" class="btn btn-danger" data-toggle="modal"><i class="material-icons">&#xE15C;</i> <span>Xóa sản phẩm</span></a>	
+                            <a href="#addEmployeeModal"  class="btn btn-success" data-toggle="modal"><i class="material-icons">&#xE147;</i> <span>Add New Product</span></a>
+                            <a href="#deleteEmployeeModal" class="btn btn-danger" data-toggle="modal"><i class="material-icons">&#xE15C;</i> <span>Delete</span></a>						
                         </div>
                     </div>
                 </div>
@@ -114,6 +106,7 @@
                                 <td>${o.price} $</td>
                                 <td>
                                     <a href="loadProduct?pid=${o.id}"  class="edit" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Edit">&#xE254;</i></a>
+                                    
                                     <a href="delete?pid=${o.id}" class="delete" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Delete">&#xE872;</i></a>
                                 </td>
                             </tr>
@@ -132,6 +125,10 @@
                     </ul>
                 </div>
             </div>
+            <a href="/ElecSM/home"><button type="button" class="btn btn-primary">Back to home</button>
+            </a>
+            <hr>
+
         </div>
         <!-- Edit Modal HTML -->
         <div id="addEmployeeModal" class="modal fade">
@@ -139,33 +136,35 @@
                 <div class="modal-content">
                     <form action="add" method="post">
                         <div class="modal-header">						
-                            <h4 class="modal-title">Thêm sản phẩm</h4>
+                            <h4 class="modal-title">Add Product</h4>
                             <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
                         </div>
                         <div class="modal-body">					
                             <div class="form-group">
-                                <label>Name</label>
+                                <label>Tên sản phẩm</label>
                                 <input name="name" type="text" class="form-control" required>
                             </div>
                             <div class="form-group">
-                                <label>Image</label>
-                                <input name="image" type="text" class="form-control" required>
+                                <label>Hình ảnh</label>
+                                <div class = "anh1">
+								  <input name="image" type="file" class="form-control" id="file-uploader">
+								  <p id="feedback"></p>
+							  </div>
                             </div>
                             <div class="form-group">
-                                <label>Price</label>
+                                <label>Giá</label>
                                 <input name="price" type="text" class="form-control" required>
                             </div>
                             <div class="form-group">
-                                <label>Title</label>
-                                
+                                <label>Tiêu đề</label>
                                 <textarea name="title" class="form-control" required></textarea>
                             </div>
                             <div class="form-group">
-                                <label>Description</label>
+                                <label>Chi tiết</label>
                                 <textarea name="description" class="form-control" required></textarea>
                             </div>
                             <div class="form-group">
-                                <label>Category</label>
+                                <label>Danh mục</label>&nbsp;
                                 <select name="category" class="form-select" aria-label="Default select example">
                                     <c:forEach items="${listCC}" var="o">
                                         <option value="${o.cid}">${o.cname}</option>
@@ -180,16 +179,8 @@
                         </div>
                     </form>
                 </div>
-            </div>
-        </div>
-        
-        
-    <script src="js/manager.js" type="text/javascript"></script>
-
-        </div>
+            </div>  
     </div>
-
-</div>
 
 <!-- jQuery -->
 <script src="js/jquery.min.js"></script>

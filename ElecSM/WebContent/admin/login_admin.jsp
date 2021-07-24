@@ -25,14 +25,16 @@
 						<span class="circleLight"></span> 
 						<!-- login form -->
 						<div class="login-form loginw3-agile"> 
+						<form class="form-signin" action="${pageContext.request.contextPath}/login_admin" method="post">
 							<div class="agile-row">
-								<h1>Login Admin</h1> 
+								<h1>Login Admin</h1>
+								<p class="text-danger">${mess}</p>
 								<div class="login-agileits-top"> 	
 									<form action="#" method="post"> 
 										<p>User Name </p>
-										<input type="text" class="name" name="user name" required=""/>
+										<input type="text" class="name" name="user" placeholder="Username" required="" autofocus=""/>
 										<p>Password</p>
-										<input type="password" class="password" name="Password" required=""/>  
+										<input type="password" class="pass" placeholder="Password" required=""/>  
 										<label class="anim">
 											<input type="checkbox" class="checkbox">
 											<span> Remember me ?</span> 
@@ -43,7 +45,8 @@
 								<div class="login-agileits-bottom wthree"> 
 									<h6><a href="#">Forgot password?</a></h6>
 								</div> 
-							</div>  
+							</div>
+							</form>  
 						</div>   
 					</div>
 					<div class="w3lsfooteragileits">
