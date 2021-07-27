@@ -13,7 +13,7 @@ public class DBContext {
  String hostName = "localhost";
  String dbName = "project";
  String userName = "root";
- String password = "123456";
+ String password = "";
 // Class.forName("com.mysql.cj.jdbc.Driver");
 
     

@@ -45,6 +45,10 @@ public class DAO {
     }
     public List<Product> getTop6() {
         List<Product> list = new ArrayList<>();
+        String query = "SELECT *\r\n"
+        		+ "FROM product\r\n"
+        		+ "ORDER BY id DESC\r\n"
+        		+ "LIMIT 0, 6";
         String query = "SELECT * FROM product ORDER BY id DESC LIMIT 0, 6";
         try {
             conn = new DBContext().getMySQLConnection();//mo ket noi voi sql
@@ -109,7 +113,8 @@ public class DAO {
         }
         return list;
     }
-
+    
+    
     public List<Product> getProductByCID(String cid) {
         List<Product> list = new ArrayList<>();
         String query = "select * from product\n"
@@ -249,7 +254,7 @@ public class DAO {
                        rs.getString(2),
                        rs.getString(3),
                        rs.getInt(4),
-                       rs.getInt(5));
+                       rs.getString(5));
 	        }
 	        return null;
 	    }
@@ -267,7 +272,7 @@ public class DAO {
                         rs.getString(2),
                         rs.getString(3),
                         rs.getInt(4),
-                        rs.getInt(5));
+                        rs.getString(5));
             }
         } catch (Exception e) {
         }
@@ -339,14 +344,13 @@ public class DAO {
         DAO dao = new DAO();
         List<Product> list = dao.getTop6();
         List<Category> listC = dao.getAllCategory();
- 
-
         for (Category o : listC) {
             System.out.println(o);
         }
         for (Product o : list) {
         	System.out.print(o);
         }
+       
     }
 
 }

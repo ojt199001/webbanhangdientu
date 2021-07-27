@@ -2,6 +2,8 @@ package controller;
 
 import dao.DAO;
 import entity.Account;
+import entity.Product;
+
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.sql.Connection;
@@ -31,8 +33,10 @@ public class LoginControl extends HttpServlet {
             throws ServletException, IOException {
     	String user = request.getParameter("user");
         String pass = request.getParameter("pass");
+        String admin = request.getParameter("isAdmin");
         String rememberMeStr = request.getParameter("rememberMe");
         boolean remember = "Y".equals(rememberMeStr);
+      
  
         Account a = null;
         boolean hasError = false;
@@ -65,6 +69,7 @@ public class LoginControl extends HttpServlet {
         if (hasError) {
             a = new Account();
             a.setUser(user);
+            a.setIsAdmin(admin);
             a.setPass(pass);
  
             // LÆ°u cÃ¡c thÃ´ng tin vÃ o request attribute trÆ°á»›c khi forward.
@@ -79,13 +84,24 @@ public class LoginControl extends HttpServlet {
         // TrÆ°á»�ng há»£p khÃ´ng cÃ³ lá»—i.
         // LÆ°u thÃ´ng tin ngÆ°á»�i dÃ¹ng vÃ o Session.
         // VÃ  chuyá»ƒn hÆ°á»›ng sang trang userInfo.
+        
         else {
+        	if(admin == null) {
+                HttpSession session = request.getSession();
+                session.setAttribute("acc", a);
+                session.setMaxInactiveInterval(1000);
+                // Redirect (Chuyá»ƒn hÆ°á»›ng) sang trang /userInfo.
+                response.sendRedirect(request.getContextPath() + "/index.jsp");
+              // response.sendRedirect(request.getContextPath() + "/home1");
+        	}
+        	else {
             HttpSession session = request.getSession();
             session.setAttribute("acc", a);
             session.setMaxInactiveInterval(1000);
             // Redirect (Chuyá»ƒn hÆ°á»›ng) sang trang /userInfo.
             response.sendRedirect(request.getContextPath() + "/index.jsp");
           // response.sendRedirect(request.getContextPath() + "/home1");
+        }
         }
     }
 

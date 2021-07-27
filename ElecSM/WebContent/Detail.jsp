@@ -87,6 +87,7 @@
 
                                         <p class="price-detail-wrap"> 
                                             <span class="price h3 text-warning"> 
+                                                <span class="num">${detail.price}</span><span class="currency"> đ(VND)</span>
                                                 <span class="num">${detail.price}</span><span class="currency">k đ 		(VND)</span>
                                             </span> 
                                         </p> <!-- price-detail-wrap .// -->
@@ -119,8 +120,6 @@
                                 </aside> <!-- col.// -->
                             </div> <!-- row.// -->
                         </div> <!-- card.// -->
-
-
                     </div>
                 </div>
             </div>

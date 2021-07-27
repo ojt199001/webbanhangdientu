@@ -14,6 +14,8 @@
         <style type="text/css">
         .row img{
        		margin-left: 48px;
+       		/* padding-right: 48px; */
+       		
         }
         .row h3{
         	margin-top: 20px;
@@ -45,12 +47,12 @@
     </head>
     <body>
         <jsp:include page="Menu.jsp"></jsp:include>
-        <marquee><b>ElecSM siêu thị điện máy uy tín hàng đầu Việt Nam</b>
+        <marquee><b style="font-size:15px;color:red"><i>ElecSM siêu thị điện máy uy tín hàng đầu Việt Nam</i></b>
 		</marquee>
         <section class="jumbotron text-center">
    
         <h1 class="jumbotron-heading"><img alt="" src="image/banner3.jpg" height="400px" width="1267px"></h1>
-        <p class="lead text-yellow mb-0"><b ><i>----->Uy tín tạo nên thương hiệu<-----</i></b></p>
+        <p style="font-size:24px;color:red"><b><i>--------------------->Uy tín tạo nên thương hiệu<----------------------</i></b></p>
         <br>
         <br>
         <div class = "row">
