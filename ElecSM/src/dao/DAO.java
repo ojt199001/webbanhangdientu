@@ -343,14 +343,13 @@ public class DAO {
         DAO dao = new DAO();
         List<Product> list = dao.getAllProduct();
         List<Category> listC = dao.getAllCategory();
- 
-
         for (Category o : listC) {
             System.out.println(o);
         }
         for (Product o : list) {
         	System.out.print(o);
         }
+       
     }
 
 }

@@ -37,6 +37,7 @@ public class HomeControl extends HttpServlet {
         List<Product> list = dao.getAllProduct();
         List<Category> listC = dao.getAllCategory();
         Product last = dao.getLast();
+       
         
         //set data to jsp
         request.setAttribute("listP", list);
@@ -45,6 +46,7 @@ public class HomeControl extends HttpServlet {
         request.getRequestDispatcher("Home.jsp").forward(request, response);
 
     }
+    
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
     /**
