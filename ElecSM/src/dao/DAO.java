@@ -43,12 +43,13 @@ public class DAO {
         }
         return list;
     }
-    public List<Product> getTop3() {
+    public List<Product> getTop6() {
         List<Product> list = new ArrayList<>();
         String query = "SELECT *\r\n"
         		+ "FROM product\r\n"
         		+ "ORDER BY id DESC\r\n"
         		+ "LIMIT 0, 6";
+        String query = "SELECT * FROM product ORDER BY id DESC LIMIT 0, 6";
         try {
             conn = new DBContext().getMySQLConnection();//mo ket noi voi sql
             ps = conn.prepareStatement(query);
@@ -341,7 +342,7 @@ public class DAO {
 
     public static void main(String[] args) {
         DAO dao = new DAO();
-        List<Product> list = dao.getAllProduct();
+        List<Product> list = dao.getTop6();
         List<Category> listC = dao.getAllCategory();
         for (Category o : listC) {
             System.out.println(o);

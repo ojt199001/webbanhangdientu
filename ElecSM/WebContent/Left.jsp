@@ -15,6 +15,11 @@
         <div class="card-header bg-danger text-white text-uppercase"><b>Hàng mới về</b></div>
         <div class="card-body">
         <c:forEach items="${list3}" var="p">
+
+<div class="card bg-light mb-3" style="margin-left: 20px;">
+        <div class="card-header bg-danger text-white text-uppercase">Hàng mới về</div>
+        <div class="card-body">
+        <c:forEach items="${listP}" var="p">
             <img class="img-fluid" src="${p.image}" />
             <h5 class="card-title">${p.name}</h5>
             <p class="card-text">${p.title}</p>

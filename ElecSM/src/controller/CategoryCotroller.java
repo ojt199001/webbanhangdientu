@@ -30,7 +30,7 @@ public class CategoryCotroller extends HttpServlet {
         String cateID = request.getParameter("cid");
         DAO dao = new DAO();
         List<Product> list = dao.getProductByCID(cateID);
-        List<Product> listN = dao.getTop3();
+        List<Product> listN = dao.getTop6();
         List<Category> listC = dao.getAllCategory();
         Product last = dao.getLast();
         
