@@ -12,6 +12,7 @@
         <!------ Include the above in your HEAD tag ---------->
         <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
         <link href="css/style.css" rel="stylesheet" type="text/css"/>
+        <link href="css/manager.css" rel="stylesheet" type="text/css"/>
         <style type="text/css">
         
         .row a {
@@ -49,7 +50,7 @@
                                         <h4 class="card-title show_txt"><a href="detail?pid=${o.id}" title="View Product" style="text-decoration: none">${o.name}</a></h4>
                                         <p class="card-text show_txt">${o.title}</p>
                                         
-                                        <b><p>${o.price} k đ</p></b>
+                                        <b><p>${o.price} đ</p></b>
                                         <div class="row">
                                             <div class="col">
                                                 <a href="cart?id=${o.id}"><button class="btn btn-success btn-block" data-toggle="modal" data-target="#myModal">Thêm vào giỏ hàng</button></a>
@@ -66,6 +67,19 @@
             		</div>
             	</div>
 			<br>
+			
+			<div class="clearfix">
+				<ul class="pagination">
+					<li class="page-item disabled"><a href="#">Previous</a></li>
+					<li class="page-item ">
+							<c:forEach begin="1" end="${endP}" var="i">
+								<a href="home?index=${i}"> ${i} </a>
+							</c:forEach>
+					</li>
+					<li class="page-item"><a href="#" class="page-link">Next</a></li>
+				</ul>
+			</div>
+			
 	        <a href="#" style="margin-left: 1375px;">
 	        <button class="btn btn-dark">Lên đầu trang</button>
 	        </a>
