@@ -30,16 +30,19 @@ public class CategoryCotroller extends HttpServlet {
         String cateID = request.getParameter("cid");
         DAO dao = new DAO();
         List<Product> list = dao.getProductByCID(cateID);
+        List<Product> listN = dao.getTop6();
         List<Category> listC = dao.getAllCategory();
         Product last = dao.getLast();
         
         
         
         request.setAttribute("listP", list);
+        request.setAttribute("listN", listN);
         request.setAttribute("listCC", listC);
         request.setAttribute("p", last);
         request.setAttribute("tag", cateID);
         request.getRequestDispatcher("Home.jsp").forward(request, response);
+        request.getRequestDispatcher("index.jsp").forward(request, response);
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
