@@ -110,35 +110,37 @@
                 </div>
             </div>
         </div>
-                  <div class="modal" id="myModal">
+                  <div class="modal fade" id="myModal">
          <div class="modal-dialog modal-lg">
          
             <div class="modal-content">
                <!-- Modal Header -->
-               <div class="modal-header">
+               <div class="modal-header bg-dark" style="color: white;">
                   <h4 class="modal-title">Thanh toán</h4>
-                  <button type="button" class="close" data-dismiss="modal">&times;</button>
+                  <button type="button" class="close" data-dismiss="modal" style="color: white;">&times;</button>
                </div>
                <!-- Modal body -->
                <div class="modal-body">
-               <form class="form-inline">
+               <section class="jumbotron" style="padding-bottom: 50px; padding-top: 20px;">
+ 
 				<div class= "row">
 				<div class="col-md-6">
 				    Tên
-				    <input type="text" class="form-control" id="staticEmail2" value="Họ và tên">
+				    <input type="text" class="form-control" id="staticEmail2" placeholder="Họ và tên">
 				</div>
 
 				<div class="col-md-6">
-				    Tên
-				    <input type="text" class="form-control" id="staticEmail2" value="Họ và tên">
+				    Số điện thoại
+				    <input type="text" class="form-control" id="staticEmail2" placeholder="Vui lòng nhập số điện thoại">
 				</div>	
 				</div>
-				</form>
-                 Tên<input name="user"  type="text"  class="form-control" placeholder="Họ tên" required=""  ><br>
-                 Số điện thoại
-                 <input name="user"  type="text"  class="form-control" placeholder="Vui lòng nhập số điện thoại" required=""  ><br>
+				<br>
+				<div class= "row">
+				<div class="col-md-6">
                  Địa chỉ nhận hàng
-                 <input name="user"  type="text"  class="form-control" placeholder="Vui lòng nhập địa chỉ" required=""  ><br>
+                 <input name="user"  type="text"  class="form-control" placeholder="Vui lòng nhập địa chỉ" required=""  >
+                 </div>
+                 <div class="col-md-6">
                  Tỉnh/ Thành phố
                  <select class="custom-select d-block w-100" id="state" required>
               	 <option value="">Đã chọn...</option>
@@ -147,7 +149,11 @@
               	 <option>Đà Nẵng</option>
               	 <option>TP Hồ Chí Minh</option><br>
               	 </select>
-              	 <br>
+				</div>
+				</div>
+				<br>
+								<div class= "row">
+				<div class="col-md-6">
               	 Phương thức thanh toán
                  <select class="custom-select d-block w-100" id="" required>
               	 <option value="">Đã chọn...</option>
@@ -156,14 +162,37 @@
               	 <option>Thẻ ghi nợ</option>
               	 <option>Paypal</option>
             	 </select>
+            	 </div>
+            	
+				<div class="col-md-6">
             	 <br>
-                 <input name="user"  type="text"  class="form-control" placeholder="Số thẻ" required=""  ><br>
+                 <input name="user"  type="number"  class="form-control" placeholder="Số thẻ" required=""  ><br>
+                 </div>
+                 </div>
+                 				<div class= "row">
+				<div class="col-md-6">
                  <input name="user"  type="text"  class="form-control" placeholder="Họ và tên chủ thẻ" required=""  ><br>
-                 <input name="user"  type="text"  class="form-control" placeholder="Ngày hiệu lực (MMYY)" required=""  ><br>
+                 </div>
+                 
+				<div class="col-md-6">
+                 <input name="user"  type="date"  class="form-control" placeholder="Ngày hiệu lực (MMYY)" required=""  ><br>
+                 </div>
+                 </div>
+                  <h5>Thành tiền: ${sum} đ</h5>
+                  </section>
                </div>
+               
                <!-- Modal footer -->
-               <div class="modal-footer">
-                  <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+               <div class="modal-footer bg-dark">
+ 
+               <div class="col-md-6">
+               	<a href="order" class="btn btn-danger rounded-pill py-2 btn-block">Xác nhận</a>
+               	</div>
+               <div class="col-md-6">
+               	<a href="" class="btn btn-danger rounded-pill py-2 btn-block" data-dismiss="modal" >Hủy</a>
+               	</div>
+
+				
                </div>
             </div>
          </div>
