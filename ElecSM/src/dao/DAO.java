@@ -337,14 +337,14 @@ public class DAO {
 
     public static void main(String[] args) {
         DAO dao = new DAO();
-        List<Product> list = dao.getTop6();
+        List<Product> listN = dao.getTop6();
         List<Category> listC = dao.getAllCategory();
  
 
         for (Category o : listC) {
             System.out.println(o);
         }
-        for (Product o : list) {
+        for (Product o : listN) {
         	System.out.print(o);
         }
     }

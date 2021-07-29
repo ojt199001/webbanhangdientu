@@ -13,6 +13,7 @@
         <!------ Include the above in your HEAD tag ---------->
         <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
         <link href="css/style.css" rel="stylesheet" type="text/css"/>
+        
     </head>
 
     <body>
@@ -100,7 +101,7 @@
                                         <li class="d-flex justify-content-between py-3 border-bottom"><strong class="text-muted">Tổng thanh toán</strong>
                                             <h5 class="font-weight-bold">${sum} đ</h5>
                                         </li>
-                                    </ul><a href="order" class="btn btn-dark rounded-pill py-2 btn-block">Mua hàng</a>
+                                    </ul><button class="btn btn-dark rounded-pill py-2 btn-block" data-toggle="modal" data-target="#myModal">Thanh toán</button>
                                 </div>
                             </div>
                         </div>
@@ -109,6 +110,64 @@
                 </div>
             </div>
         </div>
+                  <div class="modal" id="myModal">
+         <div class="modal-dialog modal-lg">
+         
+            <div class="modal-content">
+               <!-- Modal Header -->
+               <div class="modal-header">
+                  <h4 class="modal-title">Thanh toán</h4>
+                  <button type="button" class="close" data-dismiss="modal">&times;</button>
+               </div>
+               <!-- Modal body -->
+               <div class="modal-body">
+               <form class="form-inline">
+				<div class= "row">
+				<div class="col-md-6">
+				    Tên
+				    <input type="text" class="form-control" id="staticEmail2" value="Họ và tên">
+				</div>
+
+				<div class="col-md-6">
+				    Tên
+				    <input type="text" class="form-control" id="staticEmail2" value="Họ và tên">
+				</div>	
+				</div>
+				</form>
+                 Tên<input name="user"  type="text"  class="form-control" placeholder="Họ tên" required=""  ><br>
+                 Số điện thoại
+                 <input name="user"  type="text"  class="form-control" placeholder="Vui lòng nhập số điện thoại" required=""  ><br>
+                 Địa chỉ nhận hàng
+                 <input name="user"  type="text"  class="form-control" placeholder="Vui lòng nhập địa chỉ" required=""  ><br>
+                 Tỉnh/ Thành phố
+                 <select class="custom-select d-block w-100" id="state" required>
+              	 <option value="">Đã chọn...</option>
+              	 <option>Hà Nội</option>
+              	 <option>Huế</option>
+              	 <option>Đà Nẵng</option>
+              	 <option>TP Hồ Chí Minh</option><br>
+              	 </select>
+              	 <br>
+              	 Phương thức thanh toán
+                 <select class="custom-select d-block w-100" id="" required>
+              	 <option value="">Đã chọn...</option>
+              	 <option>Banking</option>
+              	 <option>Visa</option>
+              	 <option>Thẻ ghi nợ</option>
+              	 <option>Paypal</option>
+            	 </select>
+            	 <br>
+                 <input name="user"  type="text"  class="form-control" placeholder="Số thẻ" required=""  ><br>
+                 <input name="user"  type="text"  class="form-control" placeholder="Họ và tên chủ thẻ" required=""  ><br>
+                 <input name="user"  type="text"  class="form-control" placeholder="Ngày hiệu lực (MMYY)" required=""  ><br>
+               </div>
+               <!-- Modal footer -->
+               <div class="modal-footer">
+                  <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+               </div>
+            </div>
+         </div>
+      </div>
         <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>

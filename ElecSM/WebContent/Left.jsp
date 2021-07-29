@@ -15,11 +15,11 @@
 <div class="card bg-light mb-3" style="margin-left: 20px;">
         <div class="card-header bg-danger text-white text-uppercase">Hàng mới về</div>
         <div class="card-body">
-        <c:forEach items="${listP}" var="p">
-            <img class="img-fluid" src="${p.image}" />
-            <h5 class="card-title">${p.name}</h5>
-            <p class="card-text">${p.title}</p>
-            <p class="bloc_left_price">${p.price} $</p>
+        <c:forEach items="${listN}" var="n">
+        <center>
+            <img class="img-fluid" src="<%=request.getContextPath()%>/image/${n.image}" width="150px", height="120px"/>
+            </center>
+
         </c:forEach>
         </div>
     </div>
