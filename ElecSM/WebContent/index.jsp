@@ -14,6 +14,8 @@
         <style type="text/css">
         .row img{
        		margin-left: 48px;
+       		/* padding-right: 48px; */
+       		
         }
         .row h3{
         	margin-top: 20px;
@@ -45,18 +47,18 @@
     </head>
     <body>
         <jsp:include page="Menu.jsp"></jsp:include>
-        <marquee><b>ElecSM siêu thị điện máy uy tín hàng đầu Việt Nam</b>
+        <marquee><b style="font-size:15px;color:red"><i>ElecSM siêu thị điện máy uy tín hàng đầu Việt Nam</i></b>
 		</marquee>
         <section class="jumbotron text-center">
    
         <h1 class="jumbotron-heading"><img alt="" src="image/banner3.jpg" height="400px" width="1267px"></h1>
-        <p class="lead text-yellow mb-0"><b ><i>----->Uy tín tạo nên thương hiệu<-----</i></b></p>
+        <p style="font-size:24px;color:red"><b><i>--------------------->Uy tín tạo nên thương hiệu<----------------------</i></b></p>
         <br>
         <br>
         <div class = "row">
         <div class= "col-md-4">
         	<div class = "card">
-        	<h3>ElecSMBasics</h3>
+        	<h3><b>ElecSMBasics</b></h3>
         	<img src="image/basic.jpg" height="250px" width="367px">
         	<a href="#">
         	Mua sắm ngay
@@ -65,7 +67,7 @@
         </div>
         <div class= "col-md-4">
              <div class = "card">
-             <h3>Tìm TV lý tưởng cho bạn</h3>
+             <h3><b>Tìm TV lý tưởng cho bạn</b></h3>
         	<img src="image/Access.jpg" height="250px" width="367px">
         	<a href="#">
         	Mua sắm ngay
@@ -74,7 +76,7 @@
         </div>
         <div class= "col-md-4">
             <div class = "card">
-            <h3>Máy tính & Phụ kiện</h3>
+            <h3><b>Máy tính & Phụ kiện</b></h3>
         	<img src="image/TV.jpg" height="250px" width="367px">
         	<a href="#">
         	Xem thêm
@@ -86,7 +88,7 @@
         <div class = "row">
         <div class= "col-md-4">
         	<div class = "card">
-        	<h3>Oculus</h3>
+        	<h3><b>Oculus</b></h3>
         	<img src="image/Oculus.jpg" height="250px" width="367px">
         	<a href="#">
         	Mua sắm ngay
@@ -95,7 +97,7 @@
         </div>
         <div class= "col-md-4">
              <div class = "card">
-             <h3>Dụng cụ</h3>
+             <h3><b>Dụng cụ</b></h3>
         	<img src="image/thehinh.jpg" height="250px" width="367px">
         	        	<a href="#">
         	Xem thêm
@@ -104,7 +106,7 @@
         </div>
         <div class= "col-md-4">
             <div class = "card">
-            <h3>Góc Gaming</h3>
+            <h3><b>Góc Gaming</b></h3>
         	<img src="image/Gaming.jpg" height="250px" width="367px">
         	        	<a href="#">
         	Xem thêm
@@ -116,11 +118,52 @@
         <div class = "anh">
         <div class = "card">
         		  <br>
+
+                  <h3><b>Sản phẩm bán chạy</b></h3>
+        <div class = "row">
+        
+        <div class= "col-md-2">
+
+  
+        	<img src="image/2.jpg">
+
+        	</div>
+			<div class= "col-md-2">
+
+            
+        	<img src="image/4.jpg">
+
+        	</div>
+			<div class= "col-md-2">
+
+            
+        	<img src="image/6.jpg">
+
+        	</div>
+
+			<div class= "col-md-2">
+
+            
+        	<img src="image/8.jpg">
+
+        	</div>
+			<div class= "col-md-2">
+
+            
+        	<img src="image/10.jpg">
+
+        	</div>
+ 			<div class= "col-md-2">
+
+            
+        	<img src="image/12.jpg">
+
                   <h3>Sản phẩm mới</h3>
             <c:forEach items="${listNew}" var="o">
             <div class = "row">
         	<div class= "col-md-2">
 			<img src="/image/${o.image}">
+
         	</div>
 				  </div>
 			</c:forEach>
@@ -131,7 +174,7 @@
         <br>
                 <div class = "card">
         		  <br>
-                  <h3>Đang khuyến mãi</h3>
+                  <h3><b>Đang khuyến mãi</b></h3>
         <div class = "row">
         
         	<div class= "col-md-2">

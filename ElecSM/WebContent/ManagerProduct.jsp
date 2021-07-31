@@ -8,7 +8,7 @@
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>Bootstrap CRUD Data Table for Database with Modal Form</title>
+        <title>EDIT THEMXOASUA PRODUCT</title>
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto|Varela+Round">
         <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -16,6 +16,7 @@
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
         <link href="css/manager.css" rel="stylesheet" type="text/css"/>
+        <script src="ckeditor/ckeditor.js" type="text/javascript"></script>
         <style>
             img{
                 width: 200px;
@@ -35,7 +36,7 @@
                 <div class="table-title">
                     <div class="row">
                         <div class="col-sm-6">
-                            <h2>Quản lý sản phẩm</h2>
+                            <h2><b>Quản lý sản phẩm</b></h2>
                         </div>
                         <div class="col-sm-6">
                         	<a href="#deleteEmployeeModal" class="btn btn-danger" data-toggle="modal"><i class="material-icons">&#xE15C;</i> <span>Xóa</span></a>	
@@ -54,9 +55,9 @@
                                 </span>
                             </th>
                             <th>ID</th>
-                            <th>Name</th>
-                            <th>Image</th>
-                            <th>Price</th>
+                            <th>Tên sản phẩm</th>
+                            <th>Ảnh</th>
+                            <th>Giá</th>
                             <th>Actions</th>
                         </tr>
                     </thead>
@@ -74,7 +75,11 @@
                                 <td>
                                     <img src="<%=request.getContextPath()%>/image/${o.image}">
                                 </td>
-                                <td>${o.price} k đ</td>
+
+                                <td>${o.price} đ</td>
+
+                                <td>${o.price} đ</td>
+
                                 <td>
                                     <a href="loadProduct?pid=${o.id}"  class="edit" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Edit">&#xE254;</i></a>
                                     <a href="delete?pid=${o.id}" class="delete" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Delete">&#xE872;</i></a>
@@ -84,15 +89,13 @@
                     </tbody>
                 </table>
                 <div class="clearfix">
-                    <ul class="pagination">
-                        <li class="page-item disabled"><a href="#">Previous</a></li>
-                        <li class="page-item active"><a href="#" class="page-link">1</a></li>
-                        <li class="page-item"><a href="#" class="page-link">2</a></li>
-                        <li class="page-item"><a href="#" class="page-link">3</a></li>
-                        <li class="page-item"><a href="#" class="page-link">4</a></li>
-                        <li class="page-item"><a href="#" class="page-link">5</a></li>
-                        <li class="page-item"><a href="#" class="page-link">Next</a></li>
-                    </ul>
+	                <ul class="pagination">
+						<li class="page-item disabled"><a href="#">Previous</a></li>
+						<li class="page-item "><c:forEach begin="1" end="${endP}" var="i">
+								<a href="manager?index=${i}"> ${i} </a>
+							</c:forEach></li>
+						<li class="page-item"><a href="#" class="page-link">Next</a></li>
+					</ul>
                 </div>
             </div>
             <a href="/ElecSM/home"><button type="button" class="btn btn-primary">Quay lại cửa hàng</button>
@@ -131,7 +134,11 @@
                             </div>
                             <div class="form-group">
                                 <label>Chi tiết</label>
-                                <textarea name="description" class="form-control" required></textarea>
+                                <textarea rows="50"cols="100" id="description" name="description" class="form-control" required></textarea> 
+                                <script type="text/javascript">								  
+								    	editor = CKEDITOR.replace('description');
+							    </script>
+                                
                             </div>
                             <div class="form-group">
                                 <label>Danh mục</label>&nbsp;
@@ -154,6 +161,7 @@
         
         
     <script src="js/manager.js" type="text/javascript">
+    
 	    const fileUploader = document.getElementById('file-uploader');
 	
 	    fileUploader.addEventListener('change', (event) => {

@@ -12,6 +12,7 @@ import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.List;
 import javax.servlet.ServletException;
+import javax.servlet.ServletResponse;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -32,19 +33,42 @@ public class HomeControl extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
+        String indexPage = request.getParameter("index");
+        if(indexPage == null) {
+        	indexPage = "1";
+        }
+        int index = Integer.parseInt(indexPage);
+        
         //get data from dao
         DAO dao = new DAO();
         List<Product> list = dao.getAllProduct();
         List<Category> listC = dao.getAllCategory();
         Product last = dao.getLast();
         
+        int count = dao.getTotalproduct();
+        int endpage = count/12;
+        if(count % 12 != 0 ) {
+        	endpage++;
+        }
+        
+        
+        List<Product> lists = dao.pagingProduct(index);
+       
+        
         //set data to jsp
         request.setAttribute("listP", list);
         request.setAttribute("listCC", listC);
+        
         request.setAttribute("p", last);
+        request.setAttribute("listP", lists);
+        
+        request.setAttribute("endP", endpage);
+        ServletResponse respone;
+        
         request.getRequestDispatcher("Home.jsp").forward(request, response);
 
     }
+    
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
     /**
