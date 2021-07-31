@@ -118,6 +118,7 @@
         <div class = "anh">
         <div class = "card">
         		  <br>
+
                   <h3><b>Sản phẩm bán chạy</b></h3>
         <div class = "row">
         
@@ -156,8 +157,16 @@
 
             
         	<img src="image/12.jpg">
+
+                  <h3>Sản phẩm mới</h3>
+            <c:forEach items="${listNew}" var="o">
+            <div class = "row">
+        	<div class= "col-md-2">
+			<img src="/image/${o.image}">
+
         	</div>
-		</div>
+				  </div>
+			</c:forEach>
 		    <a href="#">
         	Xem thêm
         	</a>
@@ -205,7 +214,6 @@
 		</section>
 
 		<hr>
-
         
         <jsp:include page="Footer.jsp"></jsp:include>
        
