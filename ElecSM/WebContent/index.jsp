@@ -58,7 +58,7 @@
         <div class = "row">
         <div class= "col-md-4">
         	<div class = "card">
-        	<h3>ElecSMBasics</h3>
+        	<h3><b>ElecSMBasics</b></h3>
         	<img src="image/basic.jpg" height="250px" width="367px">
         	<a href="#">
         	Mua sắm ngay
@@ -67,7 +67,7 @@
         </div>
         <div class= "col-md-4">
              <div class = "card">
-             <h3>Tìm TV lý tưởng cho bạn</h3>
+             <h3><b>Tìm TV lý tưởng cho bạn</b></h3>
         	<img src="image/Access.jpg" height="250px" width="367px">
         	<a href="#">
         	Mua sắm ngay
@@ -76,7 +76,7 @@
         </div>
         <div class= "col-md-4">
             <div class = "card">
-            <h3>Máy tính & Phụ kiện</h3>
+            <h3><b>Máy tính & Phụ kiện</b></h3>
         	<img src="image/TV.jpg" height="250px" width="367px">
         	<a href="#">
         	Xem thêm
@@ -88,7 +88,7 @@
         <div class = "row">
         <div class= "col-md-4">
         	<div class = "card">
-        	<h3>Oculus</h3>
+        	<h3><b>Oculus</b></h3>
         	<img src="image/Oculus.jpg" height="250px" width="367px">
         	<a href="#">
         	Mua sắm ngay
@@ -97,7 +97,7 @@
         </div>
         <div class= "col-md-4">
              <div class = "card">
-             <h3>Dụng cụ</h3>
+             <h3><b>Dụng cụ</b></h3>
         	<img src="image/thehinh.jpg" height="250px" width="367px">
         	        	<a href="#">
         	Xem thêm
@@ -106,7 +106,7 @@
         </div>
         <div class= "col-md-4">
             <div class = "card">
-            <h3>Góc Gaming</h3>
+            <h3><b>Góc Gaming</b></h3>
         	<img src="image/Gaming.jpg" height="250px" width="367px">
         	        	<a href="#">
         	Xem thêm
@@ -118,7 +118,7 @@
         <div class = "anh">
         <div class = "card">
         		  <br>
-                  <h3>Sản phẩm bán chạy</h3>
+                  <h3><b>Sản phẩm bán chạy</b></h3>
         <div class = "row">
         
         <div class= "col-md-2">
@@ -165,7 +165,7 @@
         <br>
                 <div class = "card">
         		  <br>
-                  <h3>Đang khuyến mãi</h3>
+                  <h3><b>Đang khuyến mãi</b></h3>
         <div class = "row">
         
         	<div class= "col-md-2">

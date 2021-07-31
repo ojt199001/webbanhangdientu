@@ -1,8 +1,4 @@
-<%-- 
-    Document   : ManagerProduct
-    Created on : Dec 28, 2020, 5:19:02 PM
-    Author     : trinh
---%>
+
 
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
@@ -20,6 +16,7 @@
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
         <link href="css/manager.css" rel="stylesheet" type="text/css"/>
+        <script src="ckeditor/ckeditor.js" type="text/javascript"></script>
         <style>
             img{
                 width: 200px;
@@ -78,7 +75,7 @@
                                 <td>
                                     <img src="<%=request.getContextPath()%>/image/${o.image}">
                                 </td>
-                                <td>${o.price} $</td>
+                                <td>${o.price} đ</td>
                                 <td>
                                     <a href="loadProduct?pid=${o.id}"  class="edit" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Edit">&#xE254;</i></a>
                                     <a href="delete?pid=${o.id}" class="delete" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Delete">&#xE872;</i></a>
@@ -88,15 +85,13 @@
                     </tbody>
                 </table>
                 <div class="clearfix">
-                    <ul class="pagination">
-                        <li class="page-item disabled"><a href="#">Previous</a></li>
-                        <li class="page-item active"><a href="#" class="page-link">1</a></li>
-                        <li class="page-item"><a href="#" class="page-link">2</a></li>
-                        <li class="page-item"><a href="#" class="page-link">3</a></li>
-                        <li class="page-item"><a href="#" class="page-link">4</a></li>
-                        <li class="page-item"><a href="#" class="page-link">5</a></li>
-                        <li class="page-item"><a href="#" class="page-link">Next</a></li>
-                    </ul>
+	                <ul class="pagination">
+						<li class="page-item disabled"><a href="#">Previous</a></li>
+						<li class="page-item "><c:forEach begin="1" end="${endP}" var="i">
+								<a href="manager?index=${i}"> ${i} </a>
+							</c:forEach></li>
+						<li class="page-item"><a href="#" class="page-link">Next</a></li>
+					</ul>
                 </div>
             </div>
             <a href="/ElecSM/home"><button type="button" class="btn btn-primary">Quay lại cửa hàng</button>
@@ -135,7 +130,11 @@
                             </div>
                             <div class="form-group">
                                 <label>Chi tiết</label>
-                                <textarea name="description" class="form-control" required></textarea>
+                                <textarea rows="50"cols="100" id="description" name="description" class="form-control" required></textarea> 
+                                <script type="text/javascript">								  
+								    	editor = CKEDITOR.replace('description');
+							    </script>
+                                
                             </div>
                             <div class="form-group">
                                 <label>Danh mục</label>&nbsp;
@@ -158,6 +157,7 @@
         
         
     <script src="js/manager.js" type="text/javascript">
+    
 	    const fileUploader = document.getElementById('file-uploader');
 	
 	    fileUploader.addEventListener('change', (event) => {

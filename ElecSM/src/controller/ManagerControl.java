@@ -8,6 +8,7 @@ import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.List;
 import javax.servlet.ServletException;
+import javax.servlet.ServletResponse;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -30,14 +31,35 @@ public class ManagerControl extends HttpServlet {
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         HttpSession session = request.getSession();
+        
         Account a = (Account) session.getAttribute("acc");
         int id = a.getId();
+        
+        String indexPage = request.getParameter("index");
+        if(indexPage == null) {
+        	indexPage = "1";
+        }
+        int index = Integer.parseInt(indexPage);
+        
         DAO dao = new DAO();
-        List<Product> list = dao.getAllProduct();
+        List<Product> list = dao.getProductBySellID(id);
         List<Category> listC = dao.getAllCategory();
+        
+        int count = dao.getTotalproduct();
+        int endpage = count/12;
+        if(count % 12 != 0 ) {
+        	endpage++;
+        }
+       
+        List<Product> lists = dao.pagingProduct(index);
 
         request.setAttribute("listCC", listC);
         request.setAttribute("listP", list);
+        
+        request.setAttribute("listP", lists);
+        request.setAttribute("endP", endpage);
+        ServletResponse respone;
+        
         request.getRequestDispatcher("ManagerProduct.jsp").forward(request, response);
     }
 

@@ -12,12 +12,14 @@
         <!------ Include the above in your HEAD tag ---------->
         <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
         <link href="css/style.css" rel="stylesheet" type="text/css"/>
+        <link href="css/manager.css" rel="stylesheet" type="text/css"/>
         <style type="text/css">
         
         .row a {
         text-decoration: none;
         }
         </style>
+        
     </head>
     <body>
         <jsp:include page="Menu.jsp"></jsp:include>
@@ -40,6 +42,7 @@
 
                     <div class="col-sm-9">
                         <div id="content" class="row">
+                        
                         <c:forEach items="${listP}" var="o">
                             <div class="product col-12 col-md-6 col-lg-3">
                                 <div class="card" style="margin-right: 20px;">
@@ -53,6 +56,7 @@
                                             <div class="col">
                                                 <a href="cart?id=${o.id}"><button class="btn btn-success btn-block" data-toggle="modal" data-target="#myModal">Thêm vào giỏ hàng</button></a>
                                             </div>
+                                            
                                         </div>
                                     </div>
                                 </div>
@@ -61,10 +65,23 @@
                             </div>
                         </c:forEach>
             			</div>
-            		</div>
+            		</div>           		 
             	</div>
+            	
 			<br>
+			<div class="clearfix">
+				<ul class="pagination">
+					<li class="page-item disabled"><a href="#">Previous</a></li>
+					<li class="page-item ">
+							<c:forEach begin="1" end="${endP}" var="i">
+								<a href="home?index=${i}"> ${i} </a>
+							</c:forEach>
+					</li>
+					<li class="page-item"><a href="#" class="page-link">Next</a></li>
+				</ul>
+			</div>
 	        <a href="#" style="margin-left: 1375px;">
+	       
 	        <button class="btn btn-dark">Lên đầu trang</button>
 	        </a>
 

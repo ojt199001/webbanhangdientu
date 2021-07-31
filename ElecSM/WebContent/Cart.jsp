@@ -100,7 +100,7 @@
                                         <li class="d-flex justify-content-between py-3 border-bottom"><strong class="text-muted">Tổng thanh toán</strong>
                                             <h5 class="font-weight-bold">${sum} đ</h5>
                                         </li>
-                                    </ul><a href="order" class="btn btn-dark rounded-pill py-2 btn-block">Mua hàng</a>
+                                    </ul><button class="btn btn-dark rounded-pill py-2 btn-block" data-toggle="modal" data-target="#myModal">Thanh toán</button>
                                 </div>
                             </div>
                         </div>
@@ -108,7 +108,95 @@
                     </div>
                 </div>
             </div>
+            
         </div>
+<div class="modal fade" id="myModal">
+         <div class="modal-dialog modal-lg">
+         
+            <div class="modal-content">
+               <!-- Modal Header -->
+               <div class="modal-header bg-dark" style="color: white;">
+                  <h4 class="modal-title">Thanh toán</h4>
+                  <button type="button" class="close" data-dismiss="modal" style="color: white;">&times;</button>
+               </div>
+               <!-- Modal body -->
+               <div class="modal-body">
+               <section class="jumbotron" style="padding-bottom: 50px; padding-top: 20px;">
+ 
+				<div class= "row">
+				<div class="col-md-6">
+				    Tên
+				    <input type="text" class="form-control" id="staticEmail2" placeholder="Họ và tên">
+				</div>
+
+				<div class="col-md-6">
+				    Số điện thoại
+				    <input type="text" class="form-control" id="staticEmail2" placeholder="Vui lòng nhập số điện thoại">
+				</div>	
+				</div>
+				<br>
+				<div class= "row">
+				<div class="col-md-6">
+                 Địa chỉ nhận hàng
+                 <input name="user"  type="text"  class="form-control" placeholder="Vui lòng nhập địa chỉ" required=""  >
+                 </div>
+                 <div class="col-md-6">
+                 Tỉnh/ Thành phố
+                 <select class="custom-select d-block w-100" id="state" required>
+              	 <option value="">Đã chọn...</option>
+              	 <option>Hà Nội</option>
+              	 <option>Huế</option>
+              	 <option>Đà Nẵng</option>
+              	 <option>TP Hồ Chí Minh</option><br>
+              	 </select>
+				</div>
+				</div>
+				<br>
+								<div class= "row">
+				<div class="col-md-6">
+              	 Phương thức thanh toán
+                 <select class="custom-select d-block w-100" id="" required>
+              	 <option value="">Đã chọn...</option>
+              	 <option>Banking</option>
+              	 <option>Visa</option>
+              	 <option>Thẻ ghi nợ</option>
+              	 <option>Paypal</option>
+            	 </select>
+            	 </div>
+            	
+				<div class="col-md-6">
+            	 <br>
+                 <input name="user"  type="number"  class="form-control" placeholder="Số thẻ" required=""  ><br>
+                 </div>
+                 </div>
+                 				<div class= "row">
+				<div class="col-md-6">
+                 <input name="user"  type="text"  class="form-control" placeholder="Họ và tên chủ thẻ" required=""  ><br>
+                 </div>
+                 
+				<div class="col-md-6">
+                 <input name="user"  type="date"  class="form-control" placeholder="Ngày hiệu lực (MMYY)" required=""  ><br>
+                 </div>
+                 </div>
+                  <h5>Thành tiền: ${sum} đ</h5>
+                  </section>
+               </div>
+               
+               <!-- Modal footer -->
+               <div class="modal-footer bg-dark">
+ 
+               <div class="col-md-6">
+               	<a href="order" class="btn btn-danger rounded-pill py-2 btn-block">Xác nhận</a>
+               	</div>
+               <div class="col-md-6">
+               	<a href="" class="btn btn-danger rounded-pill py-2 btn-block" data-dismiss="modal" >Hủy</a>
+               	</div>
+
+				
+               </div>
+            </div>
+         </div>
+      </div>
         <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
