@@ -43,11 +43,12 @@
                     <li style="color:white"><i class="fa fa-print mr-2"></i> <b>+ 84 123 456 789</b></li>
                 </ul>
             </div>
+            <p>_________________________________________________________________________________________________________________________________________________________________________</p>
             <div class="col-12 copyright mt-3">
                 <p class="float-left">
-                    <a href="#">Lên đầu trang</a>
+                    <a href="#"><b style="color:yellow">Lên đầu trang</b></a>
                 </p>
-                <p class="text-right text-muted">© 2021 - Bản quyền thuộc về Công ty TNHH ElecSM</p>
+                <p class="text-right" style="color:yellow">© 2021 - Bản quyền thuộc về Công ty TNHH ElecSM</p>
             </div>
         </div>
     </div>

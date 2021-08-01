@@ -1,8 +1,3 @@
-<%-- 
-    Document   : Detail
-    Created on : Dec 29, 2020, 5:43:04 PM
-    Author     : trinh
---%>
 
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
@@ -115,12 +110,13 @@
 
                                         </div> <!-- row.// -->
                                         <hr>
+                                        
                                         <div class = "row">
-                                        <div class="col-md-6">
-                                        <a href="#" class="btn btn-lg btn-primary text-uppercase"> Buy now </a>
+                                        <div class="col-md-5">
+                                        <a href="Detail.jsp" class="btn btn-danger text-uppercase"><b>Mua ngay</b></a>
                                         </div>
                                         <div class="col-md-6">
-                                        <a href="#" class="btn btn-lg btn-outline-primary text-uppercase"> <i class="fa fa-shopping-cart"></i> Add to cart </a>
+                                        <a href="#" class="btn btn-warning text-uppercase"> <i class="fa fa-shopping-cart"></i><b style="front-size:20px">Thêm vào giỏ hàng</b></a>
                                         </div>
                                         </div>
                                     </article> <!-- card-body.// -->
