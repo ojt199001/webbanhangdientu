@@ -60,7 +60,7 @@
         	<div class = "card">
         	<h3><b>ElecSMBasics</b></h3>
         	<img src="image/basic.jpg" height="250px" width="367px">
-        	<a href="#">
+        	<a href="home">
         	Mua sắm ngay
         	</a>
         	</div>
@@ -69,7 +69,7 @@
              <div class = "card">
              <h3><b>Tìm TV lý tưởng cho bạn</b></h3>
         	<img src="image/Access.jpg" height="250px" width="367px">
-        	<a href="#">
+        	<a href="home">
         	Mua sắm ngay
         	</a>
         	 </div>
@@ -78,7 +78,7 @@
             <div class = "card">
             <h3><b>Máy tính & Phụ kiện</b></h3>
         	<img src="image/TV.jpg" height="250px" width="367px">
-        	<a href="#">
+        	<a href="home">
         	Xem thêm
         	</a>
         	</div>
@@ -116,9 +116,10 @@
         </div>
         <br>
         <div class = "anh">
+        <h3><b style="color: blue">-------------Sản phẩm bán chạy------------</b></h3>
         <div class = "card">
         		  <br>
-                  <h3><b>Sản phẩm bán chạy</b></h3>
+                  
         <div class = "row">
         
         <div class= "col-md-2">
@@ -163,9 +164,10 @@
         	</a>
         </div>
         <br>
+        <h3><b style="color: red">============Đang khuyến mãi!===========</b></h3>
                 <div class = "card">
         		  <br>
-                  <h3><b>Đang khuyến mãi</b></h3>
+                  
         <div class = "row">
         
         	<div class= "col-md-2">
@@ -200,7 +202,7 @@
         <br>
         <br>
         <a href="#">
-        <button class="btn btn-dark">Lên đầu trang</button>
+        <button class="btn btn-dark"><b>Lên đầu trang</b></button>
         </a>
 		</section>
 

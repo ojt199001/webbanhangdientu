@@ -43,12 +43,12 @@
                         <a class="nav-link" href="#">Hello ${sessionScope.acc.user}</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="logout"><b style="color:yellow">Logout</b></a>
+                        <a class="nav-link" href="logout"><b style="color:yellow">Đăng xuất</b></a>
                     </li> 
                 </c:if>
                 <c:if test="${sessionScope.acc == null}">
                     <li class="nav-item">
-                        <a class="nav-link" href="Login.jsp"><b style="color:yellow">Login</b></a>
+                        <a class="nav-link" href="Login.jsp"><b style="color:yellow">Đăng nhập</b></a>
                     </li>
                 </c:if>
             </ul>
