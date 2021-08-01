@@ -11,7 +11,7 @@
             </c:forEach>
         </ul>
     </div>
-    <div class="card bg-light mb-3" style="margin-left: 20px;">
+    <%-- <div class="card bg-light mb-3" style="margin-left: 20px;">
         <div class="card-header bg-danger text-white text-uppercase"><b>Hàng mới về</b></div>
         <div class="card-body">
         <c:forEach items="${list3}" var="p">
@@ -21,7 +21,7 @@
             <p class="bloc_left_price">${p.price} đ(VNĐ)</p>
         </c:forEach>
         </div>
-    </div>
+    </div> --%>
     
     
 </div>

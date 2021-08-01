@@ -1,4 +1,5 @@
 /*
+
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
@@ -314,6 +315,22 @@ public class DAO {
 		}
 		return list;
 	}
+	
+	public List<Product> getTop6() {
+		List<Product> list = new ArrayList<>();
+		String query = "SELECT * FROM product ORDER BY id DESC LIMIT 0, 6";
+		try {
+			conn = new DBContext().getMySQLConnection();// mo ket noi voi sql
+			ps = conn.prepareStatement(query);
+			rs = ps.executeQuery();
+			while (rs.next()) {
+				list.add(new Product(rs.getInt(1), rs.getString(2), rs.getString(3), rs.getDouble(4), rs.getString(5),
+						rs.getString(6)));
+			}
+		} catch (Exception e) {
+		}
+		return list;
+	}
 
 	public static void main(String[] args) {
 		DAO dao = new DAO();
@@ -323,10 +340,12 @@ public class DAO {
 		 * (Product o : list) { System.out.print(o); }
 		 */
 		
-		List<Product> list = dao.pagingProduct(1);
-		for (Product o : list) {
-			System.out.println(o);
-		}
+		List<Product> aa = dao.getTop6();
+		System.out.print(aa);
+//		List<Product> list = dao.pagingProduct(1);
+//		for (Product o : list) {
+//			System.out.println(o);
+//		}
 	}
 
 }
