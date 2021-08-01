@@ -51,7 +51,7 @@
                                         <h4 class="card-title show_txt"><a href="detail?pid=${o.id}" title="View Product" style="text-decoration: none">${o.name}</a></h4>
                                         <p class="card-text show_txt">${o.title}</p>
                                         
-                                        <b><p>${o.price} đ</p></b>
+                                        <b><p>${o.price} k đ</p></b>
                                         <div class="row">
                                             <div class="col">
                                                 <a href="cart?id=${o.id}"><button class="btn btn-success btn-block" data-toggle="modal" data-target="#myModal">Thêm vào giỏ hàng</button></a>
