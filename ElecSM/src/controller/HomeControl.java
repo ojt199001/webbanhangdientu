@@ -44,18 +44,16 @@ public class HomeControl extends HttpServlet {
         List<Product> list = dao.getAllProduct();
         List<Category> listC = dao.getAllCategory();
         Product last = dao.getLast();
-        
         int count = dao.getTotalproduct();
         int endpage = count/12;
         if(count % 12 != 0 ) {
         	endpage++;
         }
         
-        
         List<Product> lists = dao.pagingProduct(index);
        
         
-        //set data to jsp
+      
         request.setAttribute("listP", list);
         request.setAttribute("listCC", listC);
         
