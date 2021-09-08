@@ -118,7 +118,16 @@
                     </div>
                 </div>
             </div>
+            <br>
+             <!-- Sản phẩm liên quan -->
+	        <div>
+	        	<div>
+	        		<h3 style="color:blue"><b><i><u>Sản phẩm liên quan<u></u><i></i></b></h3>
+	        	</div>
+	        	
+	        </div>
         </div>
+       
        <jsp:include page="Footer.jsp"></jsp:include>
     </body>
 </html>

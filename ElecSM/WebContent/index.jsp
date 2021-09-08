@@ -134,10 +134,9 @@
 		</div>
 		<br>
 		<div class="anh">
-			<h3>
-				<b style="color: blue">-------------Sản phẩm mới
-					nhất------------</b>
-			</h3>
+			<h1>
+				<b style="color: blue">Sản phẩm mới nhất</b>
+			</h1>
 			<div class="card">
 				<br>
 				<div class="row">
@@ -145,16 +144,16 @@
 						<div class="col-md-2">
 							<img class="card-img-top"
 								src="<%=request.getContextPath()%>/image/${list_sp.image}"
-								alt="Card image cap" width="100px" , height="250px">
+								alt="Card image cap" width="100px" height="250px">
 						</div>
 					</c:forEach>
 				</div>
-				<a href="#"> Xem thêm </a>
+				<a href="#">Xem thêm </a>
 			</div>
 			<br>
-			<h3>
-				<b style="color: red">============Đang khuyến mãi!===========</b>
-			</h3>
+			<h1>
+				<b style="color: red">Đang khuyến mãi</b>
+			</h1>
 			<div class="card">
 				<br>
 
