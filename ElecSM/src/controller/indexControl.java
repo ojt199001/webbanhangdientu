@@ -17,12 +17,7 @@ import javax.servlet.http.HttpServletResponse;
 public class indexControl extends HttpServlet {
 	protected void processRequest(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-				response.setContentType("text/html;charset=UTF-8");
-				DAO dao = new DAO();
-				List<Product> lst_6 = dao.getTop6();
-				   request.setAttribute("list_sp", lst_6);
-				   ServletResponse respone;
-				 request.getRequestDispatcher("index.jsp").forward(request, response);
+				
 			}	
 
 	// <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the
@@ -38,7 +33,12 @@ public class indexControl extends HttpServlet {
 	@Override
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		processRequest(request, response);
+		response.setContentType("text/html;charset=UTF-8");
+		DAO dao = new DAO();
+		List<Product> lst_6 = dao.getTop6();
+		   request.setAttribute("list_sp", lst_6);
+		   ServletResponse respone;
+		 request.getRequestDispatcher("index.jsp").forward(request, response);
 	}
 
 	/**
@@ -52,7 +52,7 @@ public class indexControl extends HttpServlet {
 	@Override
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		processRequest(request, response);
+		doGet(request, response);
 	}
 
 	/**
