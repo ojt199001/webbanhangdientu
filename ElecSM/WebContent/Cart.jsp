@@ -1,4 +1,5 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix = "fmt" uri = "http://java.sun.com/jsp/jstl/fmt" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -60,7 +61,7 @@
                                                             </div>
                                                         </div>
                                                     </th>
-                                                    <td class="align-middle"><strong>${o.price}</strong></td>
+                                                    <td class="align-middle"><strong><fmt:formatNumber type = "number"  maxFractionDigits = "3" value = "${o.price}" /></strong></td>
                                                     <td class="align-middle">
                                                         <a href="sub?id=${o.id}"><button class="btnSub">-</button></a>&nbsp;&nbsp;
                                                         <strong>${o.amount}</strong>&nbsp;&nbsp;
@@ -95,11 +96,11 @@
                                 <div class="bg-light rounded-pill px-4 py-3 text-uppercase font-weight-bold">Thành tiền</div>
                                 <div class="p-4">
                                     <ul class="list-unstyled mb-4">
-                                        <li class="d-flex justify-content-between py-3 border-bottom"><strong class="text-muted">Tổng tiền hàng</strong><strong>${total}</strong></li>
+                                        <li class="d-flex justify-content-between py-3 border-bottom"><strong class="text-muted">Tổng tiền hàng</strong><strong><fmt:formatNumber type = "number"  maxFractionDigits = "3" value = "${total}" /></strong></li>
                                         <li class="d-flex justify-content-between py-3 border-bottom"><strong class="text-muted">Phí vận chuyển</strong><strong>Free ship</strong></li>
-                                        <li class="d-flex justify-content-between py-3 border-bottom"><strong class="text-muted">VAT</strong><strong>${vat}</strong></li>
+                                        <li class="d-flex justify-content-between py-3 border-bottom"><strong class="text-muted">VAT</strong><strong><fmt:formatNumber type = "number"  maxFractionDigits = "3" value = "${vat}" /></strong></li>
                                         <li class="d-flex justify-content-between py-3 border-bottom"><strong class="text-muted">Tổng thanh toán</strong>
-                                            <h5 class="font-weight-bold">${sum} đ</h5>
+                                            <h5 class="font-weight-bold"><fmt:formatNumber type = "number"  maxFractionDigits = "3" value = "${sum}" /> đ</h5>
                                         </li>
                                     </ul><button class="btn btn-dark rounded-pill py-2 btn-block" data-toggle="modal" data-target="#myModal">Thanh toán</button>
                                 </div>
@@ -111,8 +112,6 @@
             </div>
             
         </div>
-
-<div class="modal fade" id="myModal">
 
                   <div class="modal fade" id="myModal">
 
@@ -182,8 +181,10 @@
 				<div class="col-md-6">
                  <input name="user"  type="date"  class="form-control" placeholder="Ngày hiệu lực (MMYY)" required=""  ><br>
                  </div>
+                 <p></p>
                  </div>
-                  <h5>Thành tiền: ${sum} đ</h5>
+                  <h5>Thành tiền: <fmt:formatNumber type = "number"  maxFractionDigits = "3" value = "${sum}" /> đ</h5>
+                  	<p id="hvn"></p>
                   </section>
                </div>
                
@@ -202,11 +203,18 @@
             </div>
          </div>
       </div>
+
         <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
         <jsp:include page="Footer.jsp"></jsp:include>
+<script>
+   var today = new Date();
+   var date = today.getDate()+' Tháng '+(today.getMonth()+1)+' Năm '+today.getFullYear();
+   var dateTime = date
+
+   document.getElementById("hvn").innerHTML = dateTime;
+</script>
     </body>
 
-</html>
 </html>

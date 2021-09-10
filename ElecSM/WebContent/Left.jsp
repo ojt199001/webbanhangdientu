@@ -11,6 +11,7 @@
             </c:forEach>
         </ul>
     </div>
+ 
 
     <%-- <div class="card bg-light mb-3" style="margin-left: 20px;">
 
@@ -31,18 +32,3 @@
     
 
     </div>
-
-<div class="card bg-light mb-3" style="margin-left: 20px;">
-        <div class="card-header bg-danger text-white text-uppercase">Hàng mới về</div>
-        <div class="card-body">
-        <c:forEach items="${listN}" var="n">
-        <center>
-            <img class="img-fluid" src="<%=request.getContextPath()%>/image/${n.image}" width="150px", height="120px"/>
-            </center>
-
-        </c:forEach>
-        </div>
-
-
-    
-</div>

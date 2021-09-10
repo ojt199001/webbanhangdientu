@@ -32,6 +32,8 @@ public class DetailControl extends HttpServlet {
         Product p = dao.getProductByID(id);
         List<Category> listC = dao.getAllCategory();
         Product last = dao.getLast();
+		List<Product> lst_6 = dao.getTop6();
+		request.setAttribute("list_sp", lst_6);
 
         request.setAttribute("detail", p);
         request.setAttribute("listCC", listC);

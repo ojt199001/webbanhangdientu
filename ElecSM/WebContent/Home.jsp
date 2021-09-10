@@ -1,4 +1,4 @@
-
+<%@ taglib prefix = "fmt" uri = "http://java.sun.com/jsp/jstl/fmt" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -18,6 +18,9 @@
         .row a {
         text-decoration: none;
         }
+            .thu-nghiem-zoom .card{display:block;transition: all .3s ease;}
+			.thu-nghiem-zoom .card:hover{transform: scale(1.05);}
+			.thu-nghiem-zoom p{display:block;overflow: hidden;}
         </style>
         
     </head>
@@ -45,13 +48,14 @@
                         
                         <c:forEach items="${listP}" var="o">
                             <div class="product col-12 col-md-6 col-lg-3">
+                            <div class="thu-nghiem-zoom">
                                 <div class="card" style="margin-right: 20px;">
                                     <img class="card-img-top" src="<%=request.getContextPath()%>/image/${o.image}" alt="Card image cap" width="100px", height="250px">
                                     <div class="card-body">
                                         <h4 class="card-title show_txt"><a href="detail?pid=${o.id}" title="View Product" style="text-decoration: none">${o.name}</a></h4>
                                         <p class="card-text show_txt">${o.title}</p>
                                         
-                                        <b><p>${o.price} k đ</p></b>
+                                        <b><p><fmt:formatNumber type = "number"  maxFractionDigits = "3" value = "${o.price}"/> đ</p></b>
                                         <div class="row">
                                             <div class="col">
                                                 <a href="cart?id=${o.id}"><button class="btn btn-success btn-block" data-toggle="modal" data-target="#myModal">Thêm vào giỏ hàng</button></a>
@@ -59,6 +63,7 @@
                                             
                                         </div>
                                     </div>
+                                </div>
                                 </div>
                                 <br>
                                 <br>
